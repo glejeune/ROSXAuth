@@ -26,6 +26,10 @@ task :package => [:clean]
 
 task :doc => [:rdoc, :after_doc]
 
+task :after_doc do
+  sh %{scp -r doc/rdoc/* #{ENV['USER']}@rubyforge.org:/var/www/gforge-projects/ruby-osxauth/}
+end
+
 Rake::RDocTask.new do |rdoc|
     rdoc.rdoc_dir = 'doc/rdoc'
     rdoc.options += RDOC_OPTS
