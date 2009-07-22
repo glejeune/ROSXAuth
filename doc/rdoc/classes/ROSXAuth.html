@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: ROSXAuth</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">ROSXAuth</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/ext/rosxauth_c.html">
+                ext/rosxauth.c
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+include &quot;rosxauth.h&quot;
+</p>
+<p>
+// The initialization method for this module void Init_rosxauth() {
+</p>
+<pre>
+        cROSXAuth = rb_define_class(&quot;ROSXAuth&quot;, rb_cObject);
+        eROSXAuthError = rb_define_class_under( cROSXAuth, &quot;Error&quot;, rb_eRuntimeError );
+
+        rb_define_singleton_method( cROSXAuth, &quot;new&quot;, rosxauth_new, 0 );
+        rb_define_method( cROSXAuth, &quot;status&quot;, rosxauth_status,  0 );
+        rb_define_method( cROSXAuth, &quot;auth&quot;, rosxauth_auth, 0 );
+        rb_define_method( cROSXAuth, &quot;auth?&quot;, rosxauth_auth_q, 0 );
+        rb_define_method( cROSXAuth, &quot;exec&quot;, rosxauth_exec, 2 );
+
+        rb_define_const( cROSXAuth, &quot;ErrAuthorizationSuccess&quot;, INT2NUM( errAuthorizationSuccess ) );
+        rb_define_const( cROSXAuth, &quot;ErrAuthorizationInvalidSet&quot;, INT2NUM( errAuthorizationInvalidSet ) );
+        rb_define_const( cROSXAuth, &quot;ErrAuthorizationInvalidRef&quot;, INT2NUM( errAuthorizationInvalidRef ) );
+        rb_define_const( cROSXAuth, &quot;ErrAuthorizationInvalidTag&quot;, INT2NUM( errAuthorizationInvalidTag ) );
+        rb_define_const( cROSXAuth, &quot;ErrAuthorizationInvalidPointer&quot;, INT2NUM( errAuthorizationInvalidPointer ) );
+        rb_define_const( cROSXAuth, &quot;ErrAuthorizationDenied&quot;, INT2NUM( errAuthorizationDenied ) );
+        rb_define_const( cROSXAuth, &quot;ErrAuthorizationCanceled&quot;, INT2NUM( errAuthorizationCanceled ) );
+        rb_define_const( cROSXAuth, &quot;ErrAuthorizationInteractionNotAllowed&quot;, INT2NUM( errAuthorizationInteractionNotAllowed ) );
+        rb_define_const( cROSXAuth, &quot;ErrAuthorizationInternal&quot;, INT2NUM( errAuthorizationInternal ) );
+        rb_define_const( cROSXAuth, &quot;ErrAuthorizationExternalizeNotAllowed&quot;, INT2NUM( errAuthorizationExternalizeNotAllowed ) );
+        rb_define_const( cROSXAuth, &quot;ErrAuthorizationInternalizeNotAllowed&quot;, INT2NUM( errAuthorizationInternalizeNotAllowed ) );
+        rb_define_const( cROSXAuth, &quot;ErrAuthorizationInvalidFlags&quot;, INT2NUM( errAuthorizationInvalidFlags ) );
+        rb_define_const( cROSXAuth, &quot;ErrAuthorizationToolExecuteFailure&quot;, INT2NUM( errAuthorizationToolExecuteFailure ) );
+        rb_define_const( cROSXAuth, &quot;ErrAuthorizationToolEnvironmentError&quot;, INT2NUM( errAuthorizationToolEnvironmentError ) );
+</pre>
+<p>
+}
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000003">auth</a>&nbsp;&nbsp;
+      <a href="#M000004">auth?</a>&nbsp;&nbsp;
+      <a href="#M000005">exec</a>&nbsp;&nbsp;
+      <a href="#M000001">new</a>&nbsp;&nbsp;
+      <a href="#M000002">status</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Class <a href="ROSXAuth/Error.html" class="link">ROSXAuth::Error</a><br />
+
+    </div>
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">ErrAuthorizationSuccess</td>
+          <td>=</td>
+          <td class="context-item-value">INT2NUM( errAuthorizationSuccess )</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">ErrAuthorizationInvalidSet</td>
+          <td>=</td>
+          <td class="context-item-value">INT2NUM( errAuthorizationInvalidSet )</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">ErrAuthorizationInvalidRef</td>
+          <td>=</td>
+          <td class="context-item-value">INT2NUM( errAuthorizationInvalidRef )</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">ErrAuthorizationInvalidTag</td>
+          <td>=</td>
+          <td class="context-item-value">INT2NUM( errAuthorizationInvalidTag )</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">ErrAuthorizationInvalidPointer</td>
+          <td>=</td>
+          <td class="context-item-value">INT2NUM( errAuthorizationInvalidPointer )</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">ErrAuthorizationDenied</td>
+          <td>=</td>
+          <td class="context-item-value">INT2NUM( errAuthorizationDenied )</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">ErrAuthorizationCanceled</td>
+          <td>=</td>
+          <td class="context-item-value">INT2NUM( errAuthorizationCanceled )</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">ErrAuthorizationInteractionNotAllowed</td>
+          <td>=</td>
+          <td class="context-item-value">INT2NUM( errAuthorizationInteractionNotAllowed )</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">ErrAuthorizationInternal</td>
+          <td>=</td>
+          <td class="context-item-value">INT2NUM( errAuthorizationInternal )</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">ErrAuthorizationExternalizeNotAllowed</td>
+          <td>=</td>
+          <td class="context-item-value">INT2NUM( errAuthorizationExternalizeNotAllowed )</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">ErrAuthorizationInternalizeNotAllowed</td>
+          <td>=</td>
+          <td class="context-item-value">INT2NUM( errAuthorizationInternalizeNotAllowed )</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">ErrAuthorizationInvalidFlags</td>
+          <td>=</td>
+          <td class="context-item-value">INT2NUM( errAuthorizationInvalidFlags )</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">ErrAuthorizationToolExecuteFailure</td>
+          <td>=</td>
+          <td class="context-item-value">INT2NUM( errAuthorizationToolExecuteFailure )</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">ErrAuthorizationToolEnvironmentError</td>
+          <td>=</td>
+          <td class="context-item-value">INT2NUM( errAuthorizationToolEnvironmentError )</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000001" class="method-detail">
+        <a name="M000001"></a>
+
+        <div class="method-heading">
+          <a href="#M000001" class="method-signature">
+          <span class="method-name">new</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Create a <a href="ROSXAuth.html#M000001">new</a> <a
+href="ROSXAuth.html">ROSXAuth</a> object
+</p>
+<pre>
+     a = ROSXAuth.new()
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000001-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000001-source">
+<pre>
+/*
+ * Create a new ROSXAuth object
+ *
+ *      a = ROSXAuth.new()
+ */
+VALUE rosxauth_new( VALUE class ) {
+
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000003" class="method-detail">
+        <a name="M000003"></a>
+
+        <div class="method-heading">
+          <a href="#M000003" class="method-signature">
+          <span class="method-name">auth</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Authorizes and preauthorizes rights.
+</p>
+<pre>
+     a.auth
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000003-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000003-source">
+<pre>
+/*
+ * Authorizes and preauthorizes rights.
+ *
+ *      a.auth
+ */
+VALUE rosxauth_auth(VALUE self) {
+
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000004" class="method-detail">
+        <a name="M000004"></a>
+
+        <div class="method-heading">
+          <a href="#M000004" class="method-signature">
+          <span class="method-name">auth?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Check if autorizations are set
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000004-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000004-source">
+<pre>
+/*
+ * Check if autorizations are set
+ */
+VALUE rosxauth_auth_q(VALUE self) {
+
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000005" class="method-detail">
+        <a name="M000005"></a>
+
+        <div class="method-heading">
+          <a href="#M000005" class="method-signature">
+          <span class="method-name">exec</span><span class="method-args">(p1, p2)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Runs an executable tool with root privileges.
+</p>
+<pre>
+     f = hh.exec( &quot;/bin/ls&quot;, [&quot;-l&quot;, &quot;-a&quot;] )
+     if f.nil?
+       puts &quot;i said NO !!!&quot;
+     else
+       IO.for_fd( f ).each do | g |
+         g.each_line { | l | puts l }
+       end
+     end
+</pre>
+<p>
+Return a file descriptor.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000005-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000005-source">
+<pre>
+/*
+ * Runs an executable tool with root privileges.
+ *
+ *      f = hh.exec( &quot;/bin/ls&quot;, [&quot;-l&quot;, &quot;-a&quot;] )
+ *      if f.nil?
+ *        puts &quot;i said NO !!!&quot;
+ *      else
+ *        IO.for_fd( f ).each do | g |
+ *          g.each_line { | l | puts l }
+ *        end
+ *      end
+ *
+ * Return a file descriptor.
+ */
+VALUE rosxauth_exec( VALUE self, VALUE tool, VALUE args ) {
+
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000002" class="method-detail">
+        <a name="M000002"></a>
+
+        <div class="method-heading">
+          <a href="#M000002" class="method-signature">
+          <span class="method-name">status</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Give the authorization <a href="ROSXAuth.html#M000002">status</a>
+</p>
+<pre>
+     r = a.status
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000002-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000002-source">
+<pre>
+/*
+ * Give the authorization status
+ *
+ *      r = a.status
+ */
+VALUE rosxauth_status(VALUE self) {
+
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
